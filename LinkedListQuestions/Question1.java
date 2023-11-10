@@ -75,5 +75,7 @@ public class Question1 {
         Node h = removeNode(a, 4);
         display(h);
 
+       
+
     }
 }
