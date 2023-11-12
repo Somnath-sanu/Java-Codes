@@ -2,6 +2,8 @@
 
 // code order is important
 
+// O(1)
+
 package LinkedListQuestions;
 
 import LinkedListQuestions.Question2.ListNode;

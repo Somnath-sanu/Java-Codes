@@ -1,11 +1,9 @@
-//REVERSE LINKEDLIST  USING RECURSSION
-// O(n)
+// Making deep copy of linked list
 
 package LinkedListQuestions;
 
-public class Question12 {
-
-    public static class Node {
+public class Question16 {
+    static class Node {
         int val;
         Node next;
 
@@ -27,23 +25,7 @@ public class Question12 {
         // as well
 
     }
-
-    public static Node reverse(Node head) {
-
-        if (head.next == null)
-            return head;
-
-        Node newHead = reverse(head.next);
-        head.next.next = head; // Interchanging the connections
-        head.next = null; // important
-        // System.out.println(head.val);
-
-        return newHead;
-
-    }
-
     public static void main(String[] args) {
-
         Node a = new Node(3);
         Node b = new Node(6);
         Node c = new Node(9);
@@ -60,10 +42,20 @@ public class Question12 {
 
         display(a);
         System.out.println();
-        Node newHead = reverse(a);
-        // System.out.println(newHead.val); // 15
-        display(newHead);
+        //Making deep copy
+        Node temp1 = a;
+        Node h = new Node(0);
+        Node temp2 = h;
+        // h.next = a; // one way to do so.........AMAZING
+        while(temp1 != null){
+            // Node in = new Node(temp1.val);
+            temp2.next = temp1;
+            temp2 = temp2.next; // or temp2 = temp1;
+            temp1 = temp1.next;
+        }
 
+        display(h.next);
+        
+       
     }
-
 }

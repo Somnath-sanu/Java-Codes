@@ -25,7 +25,7 @@ public class Question9 {
             }
 
         }
-        a.next = null;
+        a.next = null; // important
         return h.next;
      }
 
