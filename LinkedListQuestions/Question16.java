@@ -25,6 +25,7 @@ public class Question16 {
         // as well
 
     }
+
     public static void main(String[] args) {
         Node a = new Node(3);
         Node b = new Node(6);
@@ -42,12 +43,12 @@ public class Question16 {
 
         display(a);
         System.out.println();
-        //Making deep copy
+        // Making deep copy
         Node temp1 = a;
         Node h = new Node(0);
         Node temp2 = h;
         // h.next = a; // one way to do so.........AMAZING
-        while(temp1 != null){
+        while (temp1 != null) {
             // Node in = new Node(temp1.val);
             temp2.next = temp1;
             temp2 = temp2.next; // or temp2 = temp1;
@@ -55,7 +56,6 @@ public class Question16 {
         }
 
         display(h.next);
-        
-       
+
     }
 }

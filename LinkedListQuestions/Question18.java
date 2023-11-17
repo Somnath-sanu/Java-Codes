@@ -33,7 +33,6 @@ public class Question18 {
 
         Node g = new Node(4);
 
-
         a.next = b;
         b.next = c;
         c.next = d;
@@ -44,21 +43,20 @@ public class Question18 {
 
         display(a);
         System.out.println();
-        
+
         Node dummy = new Node(500);
         dummy.next = a;
         Node prev = dummy;
         Node curr = a;
-        while(curr != null && curr.next != null){
-            while (curr != null &&  curr.next != null && prev.next.val == curr.next.val) {
+        while (curr != null && curr.next != null) {
+            while (curr != null && curr.next != null && prev.next.val == curr.next.val) {
                 curr = curr.next;
-                
+
             }
 
-            if(prev.next == curr){
+            if (prev.next == curr) {
                 prev = prev.next;
-            }
-            else{
+            } else {
                 prev.next = curr.next;
                 curr = curr.next;
                 // prev = curr;
@@ -67,33 +65,30 @@ public class Question18 {
 
         }
 
-            
-
         display(dummy.next);
 
         Node dummy2 = new Node(-1);
         Node t1 = dummy2;
         Node t2 = a;
-        while(t2 != null){
+        while (t2 != null) {
             // if(t1.val == t2.val){
-            //     t2 = t2.next;
+            // t2 = t2.next;
             // }
             // else{
-            //     t1.next = t2;
-            //     t2 = t2.next;
-            //     t1 = t1.next;
+            // t1.next = t2;
+            // t2 = t2.next;
+            // t1 = t1.next;
             // }
 
-            if(t1.val != t2.val){
-                if(t1.next == t2){
+            if (t1.val != t2.val) {
+                if (t1.next == t2) {
                     t1 = t1.next;
                     // t2 = t2.next;
-                }
-                else{
+                } else {
                     t1.next = t2;
 
                 }
-            }else{
+            } else {
                 t2 = t2.next;
             }
         }

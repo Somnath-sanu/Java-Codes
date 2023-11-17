@@ -3,7 +3,6 @@ package LinkedListQuestions;
 
 import java.util.HashSet;
 
-
 public class Question19 {
 
     static class Node {
@@ -24,51 +23,48 @@ public class Question19 {
         }
     }
 
-    public static Node removeDup(Node head){
+    public static Node removeDup(Node head) {
         // Node p1 = head;
         // Node p2 = p1;
         // while(p1 != null && p1.next != null){
-        //     while(p2 != null && p2.next != null){
-        //         if(p2.next.data == p1.data){
-        //             p2.next = p2.next.next;
-        //         }
-        //         else{
-        //             p2 = p2.next;
-        //         }
-        //     }
-        //     p1 = p1.next;
-        //     p2 = p1;
+        // while(p2 != null && p2.next != null){
+        // if(p2.next.data == p1.data){
+        // p2.next = p2.next.next;
+        // }
+        // else{
+        // p2 = p2.next;
+        // }
+        // }
+        // p1 = p1.next;
+        // p2 = p1;
         // }
 
         // return head;
 
+        // if (head == null) {
+        // return null;
+        // }
 
-        
-            // if (head == null) {
-            //     return null;
-            // }
-        
+        // more optimized code
+        Node current = head;
+        Node previous = null;
+        HashSet<Integer> uniqueValues = new HashSet<>();
 
-            // more optimized code
-            Node current = head;
-            Node previous = null;
-            HashSet<Integer> uniqueValues = new HashSet<>();
-        
-            while (current != null) {
-                if (uniqueValues.contains(current.data)) {
-                    // Duplicate found, remove the current node
-                    previous.next = current.next;
-                } else {
-                    // Add the current value to the set
-                    uniqueValues.add(current.data);
-                    previous = current;
-                }
-        
-                current = current.next;
+        while (current != null) {
+            if (uniqueValues.contains(current.data)) {
+                // Duplicate found, remove the current node
+                previous.next = current.next;
+            } else {
+                // Add the current value to the set
+                uniqueValues.add(current.data);
+                previous = current;
             }
-        
-            return head;
-        
+
+            current = current.next;
+        }
+
+        return head;
+
     }
 
     public static void main(String[] args) {
@@ -89,16 +85,12 @@ public class Question19 {
         f.next = g;
         g.next = null;
         System.out.println("Linked List before removing duplicates : ");
-                
 
         display(a);
         System.out.println();
         removeDup(a);
         System.out.println("Linked List after removing duplicates : ");
         display(a);
-        
-
-                
 
     }
 }
