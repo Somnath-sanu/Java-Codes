@@ -3,7 +3,7 @@
 package LinkedListQuestions;
 
 import LinkedListQuestions.Question2.ListNode;
-
+    
 public class Question9 {
 
      public ListNode deleteDuplicates(ListNode head) {
