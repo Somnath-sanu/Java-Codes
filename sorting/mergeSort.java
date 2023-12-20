@@ -47,6 +47,7 @@ public class mergeSort {
             return;
 
         int mid = (low + high) / 2;
+        
         mergesort(a, low, mid);
         mergesort(a, mid + 1, high);
         merge(a, low, mid, high);
