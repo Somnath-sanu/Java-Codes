@@ -4,6 +4,7 @@ public class knowDataType {
     public static void main(String[] args) {
         // Example variables
         Object a = 42;          // an int
+        System.out.println(a);
         // Object a = 3.14f;     // a float
         // Object a = "Hello";   // a String
 

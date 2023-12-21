@@ -25,7 +25,7 @@ public class sortNonDecreasing {
         int left = 0;
         int right = n -1;
         int[]ans = new int[n];
-        int k = 0;  // it will use to traverse on ans array
+        int k = 0;  // it will be  used to traverse on ans array
 
         while(left <= right){
             if(Math.abs(arr[left]) > Math.abs(arr[right])){
